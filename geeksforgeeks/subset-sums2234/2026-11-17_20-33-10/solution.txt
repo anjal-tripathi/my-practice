@@ -1,0 +1,14 @@
+class Solution:
+	def subsetSums(self, arr):
+		# code here
+		ls=[]
+		
+		def helper(i,sum):
+		    if i==len(arr):
+		        ls.append(sum)
+		        return
+		    helper(i+1,sum)
+		    helper(i+1,sum +arr[i])
+        helper(0,0)
+        return ls
+		
